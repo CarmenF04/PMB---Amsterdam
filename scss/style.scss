@@ -6,3 +6,7 @@
 @use "../scss/abstracts/mediaqueries";
 @use "../scss/abstracts/vars";
 @use "../scss/abstracts/mixins";
+
+@use "../scss/components/header/header.scss";
+
+@use "../scss/components/cursor/cursor.scss";

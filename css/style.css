@@ -9,7 +9,69 @@ html {
 }
 
 body {
-  background-color: pink;
+  background-color: white;
+  font-family: "Open Sans", sans-serif;
+}
+
+header {
+  background-color: white;
+  padding: 2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+nav {
+  display: flex;
+  gap: 9rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  align-items: center;
+  font-size: 1.6rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.contact-button {
+  padding: 0.5rem 1.5rem;
+  height: 4rem;
+  width: 10rem;
+  text-decoration: none;
+  color: white;
+  background-color: red;
+  border: none;
+  border-radius: 0.7rem;
+  cursor: pointer;
+}
+
+.search-button {
+  margin-right: 3rem;
+  color: black;
+  background: white;
+  border: none;
+  font-size: 1.8rem;
+}
+
+.logo {
+  height: 3rem;
+  margin-right: 2rem;
+}
+
+/* Set the basic cursor style */
+.custom-cursor {
+  width: 3rem;
+  height: 3rem;
+  background-color: rgba(233, 61, 61, 0.5);
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 /*# sourceMappingURL=style.css.map */
