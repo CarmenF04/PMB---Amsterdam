@@ -1,4 +1,10 @@
-body{
-    background-color: white;
-    font-family: 'Open Sans', sans-serif;
+body,
+html {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Afacad', sans-serif;
 }
+
+  

@@ -47,3 +47,21 @@ document.addEventListener('mouseleave', () => {
   const cursor = document.querySelector('.custom-cursor');
   cursor.style.transform = 'scale(1) rotateY(0deg)';
 });
+
+
+js: const burger = document.querySelector('.burger');
+const navLinks = document.querySelector('.nav-links');
+
+burger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+const slideContainer = document.getElementById('slideContainer');
+
+slideContainer.addEventListener('mouseover', () => {
+    slideContainer.style.animationPlayState = 'paused';
+});
+
+slideContainer.addEventListener('mouseout', () => {
+    slideContainer.style.animationPlayState = 'running';
+});

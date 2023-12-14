@@ -8,61 +8,79 @@ html {
   font-size: 62.5%;
 }
 
-body {
-  background-color: white;
-  font-family: "Open Sans", sans-serif;
+body,
+html {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: "Afacad", sans-serif;
 }
 
-header {
-  background-color: white;
-  padding: 2rem 2rem;
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 10px;
+  background: #fff;
+  height: 70px;
+  font-size: 1.7rem;
 }
 
-nav {
+.navbar__menu {
+  list-style: none;
   display: flex;
-  gap: 9rem;
-}
-
-nav a {
-  text-decoration: none;
-  color: #000;
+  justify-content: center;
   align-items: center;
-  font-size: 1.6rem;
+  gap: 90px;
 }
 
-nav a:hover {
-  text-decoration: underline;
+.navbar__logo img {
+  max-width: 100%;
+  height: auto;
+  width: 100px;
+  padding-top: 10px;
 }
 
-.contact-button {
-  padding: 0.5rem 1.5rem;
-  height: 4rem;
-  width: 10rem;
+.navbar__item .navbar__link {
   text-decoration: none;
-  color: white;
-  background-color: red;
-  border: none;
-  border-radius: 0.7rem;
-  cursor: pointer;
-}
-
-.search-button {
-  margin-right: 3rem;
   color: black;
-  background: white;
+}
+
+.navbar__buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.navbar__button {
+  background-color: #f1f1f1;
   border: none;
-  font-size: 1.8rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: 500;
+  font-family: "Afacad", sans-serif;
+  font-size: 1.7rem;
 }
 
-.logo {
-  height: 3rem;
-  margin-right: 2rem;
+.navbar__button--werken {
+  background-color: red;
+  color: white;
 }
 
+@media screen and (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+  }
+  .navbar__menu {
+    flex-direction: column;
+    width: 100%;
+  }
+  .navbar__buttons {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+}
 /* Set the basic cursor style */
 .custom-cursor {
   width: 3rem;
@@ -72,6 +90,222 @@ nav a:hover {
   position: absolute;
   pointer-events: none;
   transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.intro {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; /* Adjust the height as needed */
+  font-size: 1.6rem;
+}
+
+.dot {
+  color: red;
+}
+
+.intro__text {
+  flex-basis: 50%;
+  padding: 0.5rem;
+}
+
+.intro__media {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner__image {
+  width: 100%;
+  max-width: 9rem;
+  height: auto;
+}
+
+.intro__search-form {
+  width: 70%;
+}
+
+.intro__search-input {
+  width: 40rem;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: 10px;
+  border: 2px solid red;
+}
+
+.intro__search-button {
+  width: 10rem;
+  padding: 1rem;
+  background-color: #fff;
+  border: 2px solid red;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.text-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container h2 {
+  font-size: 2rem;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+.container h3 {
+  font-size: 1.8rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.container p {
+  font-size: 1.7rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.slideshow {
+  overflow: hidden;
+  position: relative;
+  min-height: 40vh; /* Adjust as needed to fit your design */
+}
+
+.slide-container {
+  display: flex;
+  align-items: center; /* This will vertically center your slides in the slideshow */
+  animation: scrollSlide 40s linear infinite; /* Adjust the timing as needed */
+  gap: 10px; /* Space between slides */
+}
+
+.slide {
+  flex: 0 0 auto;
+  width: 200px; /* Width of each slide */
+  height: 20rem; /* Height of each slide, can adjust as needed */
+  overflow: hidden; /* Ensures that the images don't overflow their container */
+}
+
+.slide img {
+  width: 100%; /* Will make the image fill the width */
+  height: 100%; /* Will make the image fill the height */
+  object-fit: cover; /* Ensures the image covers the slide area, may crop */
+  display: block;
+}
+
+@keyframes scrollSlide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0); /* Slide everything to the left by its own width */
+  }
+}
+.info-cards {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 5rem;
+  font-size: 1.6rem;
+}
+
+.card {
+  flex: 1;
+  max-width: calc(33.333% - 20px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  background: white;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.card p {
+  color: #666;
+}
+
+.card__btn {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.card__btn:hover {
+  background-color: #0056b3; /* A darker shade for the hover state */
+}
+
+.footer {
+  background-color: #333; /* Dark background for the footer */
+  color: #fff; /* White text color */
+  padding: 2rem; /* Padding around the content */
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Ensure it's responsive */
+}
+
+.footer-section {
+  margin: 1rem;
+  flex-basis: 200px; /* Minimum width of each footer section */
+}
+
+.footer-section h4 {
+  margin-bottom: 0.5rem; /* Spacing below the title */
+}
+
+.footer-section p {
+  margin-bottom: 1rem; /* Spacing below the paragraph if any */
+}
+
+.footer-section a {
+  color: #fff; /* White text color for links */
+  text-decoration: none; /* Removes underline from links */
+  display: block; /* Makes each link block-level, so it appears on a new line */
+  margin-bottom: 0.5rem; /* Spacing between links */
+}
+
+.footer-section a:hover {
+  text-decoration: underline; /* Underline on hover for links */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer {
+    justify-content: center;
+  }
+  .footer-section {
+    flex-basis: auto; /* Allows footer sections to adjust as per content */
+    margin: 1rem 0; /* Stacks them with space top and bottom */
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

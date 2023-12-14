@@ -7,6 +7,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/682c14d7c1.js" crossorigin="anonymous"></script>
     <title>Amsterdam BMV</title>
     <script src="/js/main.js" defer></script>
@@ -14,23 +17,127 @@
 </head>
 
 <body>
-    <header>
-        <img src="/img/logo - amsterdam.png" alt="Logo" class="logo text-hover">
-
-        <nav>
-            <a href="#mensen" class="nav-item text-hover">Mensen</a>
-            <a href="#expertise" class="nav-item text-hover">Expertise</a>
-            <a href="#projecten" class="nav-item text-hover">Opdrachten en projecten</a>
-            <a href="#publicaties" class="nav-item text-hover">Publicaties</a>
-        </nav>
-        <div>
-            <button class="search-button text-hover"><i class="fa-solid fa-magnifying-glass"></i></button>
-            <button class="contact-button text-hover">Contact</button>
+    <nav class="navbar">
+        <div class="navbar__logo">
+            <img src="/img/logo - amsterdam.png" alt="Logo">
         </div>
-        <div class="custom-cursor"></div>
+        <ul class="navbar__menu">
+            <li class="navbar__item"><a href="#mensen" class="navbar__link">Mensen</a></li>
+            <li class="navbar__item"><a href="#expertise" class="navbar__link">Expertise</a></li>
+            <li class="navbar__item"><a href="#opdrachten" class="navbar__link">Opdrachten en projecten</a></li>
+            <li class="navbar__item"><a href="#publicaties" class="navbar__link">Publicaties</a></li>
+        </ul>
+        <div class="navbar__buttons">
+            <button class="navbar__button">Contact</button>
+            <button class="navbar__button navbar__button--werken">Werken bij</button>
+        </div>
+    </nav>
 
-    </header>
 
+    <section class="intro">
+        <div class="intro__text">
+            <h1 class="intro__heading">Projectmanagementbureau<span class="dot">.</span></h1>
+            <h2 class="intro__subheading">Bouwmanagement en Maatschappelijk Vastgoed</h2>
+            <p class="intro__description">
+                Een sociaal-duurzaam Amsterdam
+                Voor veel mensen is en blijft Amsterdam een zeer aantrekkelijke plek om te wonen en dus blijven we
+                bouwen aan de groei van de stad.
+                Maar Amsterdam bestaat natuurlijk uit méér dan alleen woningen. Daarom bouwen we aan een
+                sociaal-duurzaam Amsterdam: een stad die het welzijn van haar bewoners belangrijk vindt en verbetert,
+                door niet alleen woningen te bouwen maar ook te zorgen voor maatschappelijke voorzieningen, voor huidige
+                bewoners en toekomstige generaties.
+            </p>
+            <form action="#" method="get" class="intro__search-form">
+                <input type="search" class="intro__search-input" placeholder="Zoeken...">
+                <button type="submit" class="intro__search-button">Search</button>
+            </form>
+        </div>
+        <div id="intro__image">
+            <div class="intro__img">
+                <img class="banner__img" src="/img/intro-img.png" alt="Image 1">
+            </div>
+        </div>
+    </section>
+
+    <section class="text-section">
+        <div class="container">
+            <h2>Bouwmanagement en Maatschappelijk Vastgoed<span class="dot">.</span></h2>
+            <h3>Bijdragen aan een toekomstbestendige stad</h3>
+            <p>Een sociaal-duurzaam Amsterdam</p>
+            <p>Voor veel mensen is en blijft Amsterdam een zeer aantrekkelijke plek om te wonen en dus blijven we bouwen aan de groei van de stad.</p>
+            <p>Maar Amsterdam bestaat natuurlijk uit méér dan alleen woningen. Daarom bouwen we aan een sociaal-duurzaam Amsterdam: een stad die het welzijn van haar bewoners belangrijk vindt en verbetert, door niet alleen woningen te bouwen maar ook te zorgen voor maatschappelijke voorzieningen, voor huidige bewoners en toekomstige generaties.</p>
+        </div>
+    </section>
+    
+    <section class="slideshow">
+        <div class="slide-container" id="slideContainer">
+            <div class="slide"><img src="/img/img1.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="/img/img2.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="/img/img3.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="/img/img4.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="/img/img5.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="/img/img6.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="/img/img7.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="/img/img8.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="/img/img1.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="/img/img2.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="/img/img3.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="/img/img4.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="/img/img5.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="/img/img6.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="/img/img7.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="/img/img8.jpg" alt="Image 1"></div>
+
+            <!-- <div class="slide">
+                <a href="http://www.example.com" target="_blank">
+                    <img src="/img/img8.jpg" alt="Image 1">
+                </a>
+            </div> -->
+            
+        </div>
+    </section>
+    
+    
+    <section class="info-cards">
+        <div class="card" id="organisatie">
+            <h3>Organisatie</h3>
+            <p>Learn more about our organization, mission, and values.</p>
+            <button class="card__btn">Meer info</button>
+        </div>
+        <div class="card" id="projecten">
+            <h3>Projecten</h3>
+            <p>Discover our projects and the impact they have on the community.</p>
+            <button class="card__btn">Meer info</button>
+        </div>
+        <div class="card" id="werken-bij">
+            <h3>Werken bij</h3>
+            <p>Join our team and contribute to meaningful work.</p>
+            <button class="card__btn">Meer info</button>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-section">
+            <h4>Mail</h4>
+            <p>PMB is bereikbaar op werkdagen tussen 8.30 - 17.30 uur.</p>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-section">
+            <h4>Volg het ProjectManagement Bureau</h4>
+            <a href="#twitter">Twitter</a>
+            <a href="#linkedin">LinkedIn</a>
+        </div>
+        <div class="footer-section">
+            <h4>Over deze site</h4>
+            <a href="#colofon">Colofon</a>
+            <a href="#proclaimer">Proclaimer en Copyright</a>
+            <a href="#sitemap">Sitemap</a>
+        </div>
+        <div class="footer-section">
+            <h4>Amsterdam.nl</h4>
+            <p>Nieuws en publieksinformatie van de gemeente Amsterdam vindt u op amsterdam.nl</p>
+            <a href="https://www.amsterdam.nl">Naar amsterdam.nl</a>
+        </div>
+    </footer>
 </body>
 
 </html>
