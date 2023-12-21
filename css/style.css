@@ -1,4 +1,7 @@
-*, *::before, *::after {
+@charset "UTF-8";
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,303 +11,374 @@ html {
   font-size: 62.5%;
 }
 
-body,
-html {
-  margin: 0;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  font-family: "Afacad", sans-serif;
+body {
+  font-size: 2rem;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
+body {
+  font-family: "Poppins", sans-serif;
   background: #fff;
-  height: 70px;
-  font-size: 1.7rem;
+  min-height: 100vh;
+  padding-bottom: 0;
 }
 
-.navbar__menu {
-  list-style: none;
+.nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 99;
+}
+.nav__content {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1.5rem 1rem;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 90px;
+  justify-content: space-between;
 }
-
-.navbar__logo img {
-  max-width: 100%;
-  height: auto;
-  width: 100px;
-  padding-top: 10px;
-}
-
-.navbar__item .navbar__link {
+.nav__logo-link {
+  font-size: 2.2rem;
+  color: #DA1219;
+  transition: 0.3s;
   text-decoration: none;
-  color: black;
+  font-weight: 600;
 }
-
-.navbar__buttons {
-  display: flex;
-  gap: 10px;
+.nav__checkbox-label {
+  display: none;
 }
-
-.navbar__button {
-  background-color: #f1f1f1;
-  border: none;
-  padding: 10px 20px;
+.nav__checkbox-label .nav__icon {
+  font-size: 2rem;
+  color: #DA1219;
   cursor: pointer;
-  border-radius: 10px;
-  font-weight: 500;
-  font-family: "Afacad", sans-serif;
-  font-size: 1.7rem;
 }
-
-.navbar__button--werken {
-  background-color: red;
-  color: white;
+.nav__checkbox {
+  display: none;
 }
-
-@media screen and (max-width: 600px) {
-  .navbar {
-    flex-direction: column;
-  }
-  .navbar__menu {
-    flex-direction: column;
-    width: 100%;
-  }
-  .navbar__buttons {
-    width: 100%;
-    justify-content: space-evenly;
-  }
-}
-/* Set the basic cursor style */
-.custom-cursor {
-  width: 3rem;
-  height: 3rem;
-  background-color: rgba(233, 61, 61, 0.5);
-  border-radius: 50%;
-  position: absolute;
-  pointer-events: none;
-  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
-}
-
-.intro {
-  flex-grow: 1;
+.nav__list {
   display: flex;
-  justify-content: center;
   align-items: center;
-  min-height: 80vh; /* Adjust the height as needed */
-  font-size: 1.6rem;
+  gap: 1rem;
+  list-style: none;
+  transition: left 0.3s;
+}
+.nav__item .nav__link {
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  text-decoration: none;
+  font-weight: 600;
+  color: #333;
+  transition: 0.3s;
+}
+.nav__item .nav__link:hover {
+  border-color: #DA1219;
+  color: #DA1219;
 }
 
-.dot {
+@media screen and (max-width: 768px) {
+  .nav__checkbox-label {
+    display: block;
+  }
+  .nav__list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: none;
+  }
+  .nav__list .nav__item {
+    width: 100%;
+    text-align: center;
+  }
+  .nav__checkbox:checked ~ .nav__list {
+    display: flex;
+  }
+}
+.carousel__section {
+  display: flex;
+  min-height: 100vh;
+  text-align: center;
+  padding: 5rem;
+  padding: 10rem;
+  margin-top: 10rem;
+}
+.carousel__section__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+}
+@media (min-width: 768px) {
+  .carousel__section__container {
+    flex-wrap: nowrap;
+  }
+}
+.carousel__section__content {
+  flex: 1;
+  max-width: 800px;
+}
+.carousel__section__text {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 1rem;
+}
+.carousel__section .carousel__title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.carousel__section .carousel__title .carousel__dot {
   color: red;
 }
 
-.intro__text {
-  flex-basis: 50%;
-  padding: 0.5rem;
-}
-
-.intro__media {
-  flex-basis: 50%;
+.features {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.banner__image {
-  width: 100%;
-  max-width: 9rem;
-  height: auto;
-}
-
-.intro__search-form {
-  width: 70%;
-}
-
-.intro__search-input {
-  width: 40rem;
-  padding: 1rem;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 3rem;
   margin-top: 2rem;
-  border-radius: 10px;
-  border: 2px solid red;
 }
-
-.intro__search-button {
-  width: 10rem;
-  padding: 1rem;
+.features .feature-card {
   background-color: #fff;
-  border: 2px solid red;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.144);
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+  transition: all 0.3s ease;
+}
+.features .feature-card .feature-button {
+  font-size: 1em;
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  border-radius: 1rem;
+  margin-top: 2rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.features .feature-card .feature-button:hover {
+  background-color: #d62c1a;
+  transform: translateY(-2px);
+}
+.features .feature-card .feature-button:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.features .feature-card .feature-button .feature-icon {
+  margin: 20px 0;
+  font-size: 3em;
+  color: #333;
+}
+.features .feature-card .feature-button .feature-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333;
 }
 
-.text-section {
+.organisation {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 60vh;
-  padding: 20px;
-  background-color: #fff;
+  min-height: 100vh;
+}
+.organisation__container {
+  text-align: center;
+  max-width: 1000px;
+}
+.organisation__title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.organisation__subtitle {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+.organisation__text {
+  font-size: 1.9rem;
+  color: #666;
+  line-height: 1.6;
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
+.card-container {
+  display: flex;
+  justify-content: center;
+  padding: 2em;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+}
+.card-container .card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 340px;
+  overflow: hidden;
+  margin: 1em;
+  transition: box-shadow 0.3s ease;
+}
+.card-container .card:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+.card-container .card .card-image-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background: #eee;
+}
+.card-container .card .card-image-container .card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+.card-container .card .card-image-container .card-image:hover {
+  transform: scale(1.1);
+}
+.card-container .card .card-content {
+  padding: 1em;
   text-align: center;
 }
-
-.container h2 {
-  font-size: 2rem;
-  color: #000;
-  margin-bottom: 1rem;
-}
-
-.container h3 {
-  font-size: 1.8rem;
-  color: #555;
-  margin-bottom: 1rem;
-}
-
-.container p {
-  font-size: 1.7rem;
+.card-container .card .card-content .card-title {
   color: #333;
-  line-height: 1.6;
-  margin-bottom: 1rem;
+  font-size: 1.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.card-container .card .card-content .card-description {
+  color: #666;
+  font-size: 1em;
+  margin-bottom: 1em;
+}
+.card-container .card .card-content .card-button {
+  font-size: 1em;
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.card-container .card .card-content .card-button:hover {
+  background-color: #d62c1a;
+  transform: translateY(-2px);
 }
 
-.slideshow {
-  overflow: hidden;
+.content-slider {
   position: relative;
-  min-height: 40vh; /* Adjust as needed to fit your design */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+  object-fit: cover;
+  padding: 3rem;
+}
+.content-slider #slider {
+  width: 100%;
+  position: relative;
+}
+.content-slider .slide {
+  width: 100%;
+  max-height: 49rem;
+  object-fit: cover;
+  display: none;
+  border-radius: 5rem;
+  margin: auto;
+}
+.content-slider .slide:first-child {
+  display: block;
+}
+.content-slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  border: 2px solid transparent;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content-slider button:hover {
+  background-color: #d9534f;
+  color: #fff;
+  border-color: #d9534f;
+  transform: translateY(-50%) scale(1.1);
+}
+.content-slider button:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transform: translateY(-50%) scale(0.9);
+}
+.content-slider button.prev {
+  left: 10px;
+}
+.content-slider button.prev:before {
+  content: "❮";
+  font-size: 24px;
+  color: currentColor;
+  transform: rotate(135deg);
+}
+.content-slider button.next {
+  right: 10px;
+}
+.content-slider button.next:after {
+  content: "❯";
+  font-size: 24px;
+  color: currentColor;
+  transform: rotate(-45deg);
+}
+.content-slider #prev {
+  left: 0;
+}
+.content-slider #next {
+  right: 0;
 }
 
-.slide-container {
-  display: flex;
-  align-items: center; /* This will vertically center your slides in the slideshow */
-  animation: scrollSlide 40s linear infinite; /* Adjust the timing as needed */
-  gap: 10px; /* Space between slides */
+#slider {
+  position: relative;
 }
 
 .slide {
-  flex: 0 0 auto;
-  width: 200px; /* Width of each slide */
-  height: 20rem; /* Height of each slide, can adjust as needed */
-  overflow: hidden; /* Ensures that the images don't overflow their container */
-}
-
-.slide img {
-  width: 100%; /* Will make the image fill the width */
-  height: 100%; /* Will make the image fill the height */
-  object-fit: cover; /* Ensures the image covers the slide area, may crop */
   display: block;
+  position: relative;
 }
 
-@keyframes scrollSlide {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-100%, 0, 0); /* Slide everything to the left by its own width */
-  }
-}
-.info-cards {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding: 5rem;
-  font-size: 1.6rem;
-}
-
-.card {
-  flex: 1;
-  max-width: calc(33.333% - 20px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  padding: 2rem;
-  text-align: center;
-  background: white;
-  transition: transform 0.3s ease-in-out;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card h3 {
-  margin-top: 0;
-  color: #333;
-}
-
-.card p {
-  color: #666;
-}
-
-.card__btn {
+#slide-caption {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: red;
   color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  text-transform: uppercase;
-  font-weight: bold;
-  margin-top: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  padding: 0.5em;
+  border-radius: 3rem;
 }
 
-.card__btn:hover {
-  background-color: #0056b3; /* A darker shade for the hover state */
-}
-
-.footer {
-  background-color: #333; /* Dark background for the footer */
-  color: #fff; /* White text color */
-  padding: 2rem; /* Padding around the content */
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap; /* Ensure it's responsive */
-}
-
-.footer-section {
-  margin: 1rem;
-  flex-basis: 200px; /* Minimum width of each footer section */
-}
-
-.footer-section h4 {
-  margin-bottom: 0.5rem; /* Spacing below the title */
-}
-
-.footer-section p {
-  margin-bottom: 1rem; /* Spacing below the paragraph if any */
-}
-
-.footer-section a {
-  color: #fff; /* White text color for links */
-  text-decoration: none; /* Removes underline from links */
-  display: block; /* Makes each link block-level, so it appears on a new line */
-  margin-bottom: 0.5rem; /* Spacing between links */
-}
-
-.footer-section a:hover {
-  text-decoration: underline; /* Underline on hover for links */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .footer {
-    justify-content: center;
+@media screen and (max-width: 1080px) {
+  .content-slider {
+    width: 100%;
+    flex-wrap: wrap;
   }
-  .footer-section {
-    flex-basis: auto; /* Allows footer sections to adjust as per content */
-    margin: 1rem 0; /* Stacks them with space top and bottom */
+  #slider {
+    flex-direction: column;
   }
 }
 

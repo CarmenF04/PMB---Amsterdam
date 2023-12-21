@@ -1,19 +1,16 @@
-@use "../scss/abstracts/reset";
-@use "../scss/base.scss";
+@use "./abstracts/reset";
+@use "./base.scss";
 
 
-// Abstracts
-@use "../scss/abstracts/mediaqueries";
-@use "../scss/abstracts/vars";
-@use "../scss/abstracts/mixins";
+@use "./components/header/header.scss";
 
-@use "../scss/components/header/header.scss";
+@use "./components/carousel/carousel.scss";
 
-@use "../scss/components/cursor/cursor.scss";
 
-@use "../scss/components/section1/section1.scss";
-@use "../scss/components/section2/section2.scss";
-@use "../scss/components/section3/section3.scss";
-@use "../scss/components/section4/section4.scss";
+@use "./components/cards/cards.scss";
 
-@use "../scss/components/footer/footer.scss";
+@use "./components/organisation/organisation.scss";
+
+@use "./components/projects/projects.scss";
+
+@use "./components/slider/slider.scss";

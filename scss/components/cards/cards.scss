@@ -1,0 +1,57 @@
+.features {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 3rem;
+    margin-top: 2rem;
+  
+    .feature-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.144);
+      padding: 20px;
+      text-align: center;
+      width: 300px;
+      transition: all 0.3s ease;
+
+      .feature-button{
+        font-size: 1em;
+          padding: 10px 20px;
+          background-color: #e74c3c; 
+          color: white;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          margin-top: 2rem;
+          transition: background-color 0.3s, transform 0.3s;
+  
+          &:hover {
+            background-color: darken(#e74c3c, 10%);
+            transform: translateY(-2px); 
+          }
+      
+      
+      &:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+  
+      .feature-icon {
+        margin: 20px 0;
+        font-size: 3em;
+        color: #333; 
+  
+       
+      }
+  
+      .feature-title {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: #333; 
+      }
+
+    }
+
+}
+
+}

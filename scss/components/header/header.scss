@@ -1,67 +1,93 @@
-.navbar {
+$primary-color: #DA1219; // Replace with your primary color
+$text-dark: #333; // Replace with your text color
+$max-width: 1200px; // Max width of the nav content
+
+.nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 99;
+
+  &__content {
+    max-width: $max-width;
+    margin: auto;
+    padding: 1.5rem 1rem;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background: #fff;
-    height: 70px;
-    font-size: 1.7rem;
-}
+  }
 
-.navbar__menu {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 90px;
-}
-
-.navbar__logo img {
-    max-width: 100%;
-    height: auto;
-    width: 100px;
-    padding-top: 10px;
-}
-
-.navbar__item .navbar__link {
+  &__logo-link {
+    font-size: 2.2rem;
+    color: $primary-color;
+    transition: 0.3s;
     text-decoration: none;
-    color: black;
-}
+    font-weight: 600;
+  }
 
-.navbar__buttons {
+  &__checkbox-label {
+    display: none;
+    .nav__icon {
+      font-size: 2rem;
+      color: $primary-color;
+      cursor: pointer;
+    }
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__list {
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    transition: left 0.3s;
+  }
+
+  &__item {
+    .nav__link {
+      padding: 0.5rem 1rem;
+      border: 2px solid transparent;
+      text-decoration: none;
+      font-weight: 600;
+      color: $text-dark;
+      transition: 0.3s;
+
+      &:hover {
+        border-color: $primary-color;
+        color: $primary-color;
+      }
+    }
+  }
 }
 
-.navbar__button {
-    background-color: #f1f1f1;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 10px;
-    font-weight: 500;
-    font-family: 'Afacad', sans-serif;
-    font-size: 1.7rem;
-}
 
-.navbar__button--werken {
-    background-color: red;
-    color: white;
-}
+@media screen and (max-width: 768px) {
+  .nav__checkbox-label {
+    display: block; 
+  }
 
+  .nav__list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: none; 
 
-@media screen and (max-width: 600px) {
-    .navbar {
-        flex-direction: column;
+    .nav__item {
+      width: 100%; 
+      text-align: center; 
     }
+  }
 
-    .navbar__menu {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .navbar__buttons {
-        width: 100%;
-        justify-content: space-evenly;
-    }
+  .nav__checkbox:checked ~ .nav__list {
+    display: flex; 
+  }
 }

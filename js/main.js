@@ -1,67 +1,75 @@
-let lastX;
-let isHovering = false;
+document.addEventListener('DOMContentLoaded', () => {
+  // Slider functionality
+  const slides = document.querySelectorAll('.slide');
+  let index = 0;
 
-document.addEventListener('mousemove', (e) => {
-  const cursor = document.querySelector('.custom-cursor');
-
-  // Center the cursor on the mouse position
-  cursor.style.left = `${e.pageX - cursor.offsetWidth / 2}px`;
-  cursor.style.top = `${e.pageY - cursor.offsetHeight / 2}px`;
-
-  // Tilt the cursor based on mouse movement direction (only left and right)
-  if (!isHovering) {
-    if (lastX !== undefined) {
-      if (e.pageX < lastX) {
-        // Mouse moved left
-        cursor.style.transform = 'rotateY(180deg)';
-      } else if (e.pageX > lastX) {
-        // Mouse moved right
-        cursor.style.transform = 'rotateY(0deg)';
-      }
-    }
+  function showSlide(i) {
+      slides.forEach(slide => {
+          slide.style.display = 'none';
+          slide.classList.remove('active'); // Assuming 'active' class controls visibility
+      });
+      slides[i].style.display = 'block';
+      slides[i].classList.add('active'); // Make sure to add 'active' class to the current slide
   }
 
-  // Update lastX to the current X position
-  lastX = e.pageX;
+  function nextSlide() {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+  }
+
+  function prevSlide() {
+      index = (index - 1 + slides.length) % slides.length;
+      showSlide(index);
+  }
+
+  document.getElementById('next').addEventListener('click', nextSlide);
+  document.getElementById('prev').addEventListener('click', prevSlide);
+
+  // Automatic slider
+  setInterval(nextSlide, 3000); // Change image every 3 seconds
 });
 
-// Elements that trigger the hover effect
-const hoverElements = document.querySelectorAll('.text-hover');
 
-hoverElements.forEach((el) => {
-  el.addEventListener('mouseenter', () => {
-    const cursor = document.querySelector('.custom-cursor');
-    cursor.style.transform = 'scale(2)';
-    isHovering = true;
+document.addEventListener('DOMContentLoaded', () => {
+  const slides = document.querySelectorAll('.slide');
+  const caption = document.getElementById('slide-caption');
+  const captions = [
+      'Caption for Image 1', // Caption for the first image
+      // Add more captions for each image accordingly
+  ];
+  let index = 0;
+
+  function showSlide(i) {
+      slides.forEach(slide => {
+          slide.style.display = 'none';
+      });
+      slides[i].style.display = 'block';
+      caption.textContent = captions[i]; // Update the caption text
+  }
+
+  function nextSlide() {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+  }
+
+  function prevSlide() {
+      index = (index - 1 + slides.length) % slides.length;
+      showSlide(index);
+  }
+
+  document.getElementById('prev').addEventListener('click', prevSlide);
+  document.getElementById('next').addEventListener('click', nextSlide);
+
+  showSlide(index);
+});
+
+
+function showSlide(i) {
+  slides.forEach((slide, index) => {
+      slide.style.display = 'none';
+      slide.classList.remove('active'); 
   });
-
-  el.addEventListener('mouseleave', () => {
-    const cursor = document.querySelector('.custom-cursor');
-    cursor.style.transform = 'scale(1)';
-    isHovering = false;
-  });
-});
-
-// Reset the cursor when not moving horizontally
-document.addEventListener('mouseleave', () => {
-  const cursor = document.querySelector('.custom-cursor');
-  cursor.style.transform = 'scale(1) rotateY(0deg)';
-});
-
-
-js: const burger = document.querySelector('.burger');
-const navLinks = document.querySelector('.nav-links');
-
-burger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
-
-const slideContainer = document.getElementById('slideContainer');
-
-slideContainer.addEventListener('mouseover', () => {
-    slideContainer.style.animationPlayState = 'paused';
-});
-
-slideContainer.addEventListener('mouseout', () => {
-    slideContainer.style.animationPlayState = 'running';
-});
+  slides[i].style.display = 'block';
+  slides[i].classList.add('active'); 
+  caption.textContent = captions[i]; 
+}
