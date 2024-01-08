@@ -1,0 +1,55 @@
+.footer {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer__section {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__heading {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.footer__description {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+}
+
+.footer__link {
+    color: #ccc;
+    text-decoration: none;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+}
+
+/* Modifier for contact section */
+.footer__section--contact {
+    flex-grow: 1;
+}
+
+/* Modifier for follow section */
+.footer__section--follow {
+    flex-grow: 1;
+}
+
+/* Modifier for about section */
+.footer__section--about {
+    flex-grow: 1;
+}
+
+/* Modifier for more section */
+.footer__section--more {
+    flex-grow: 2;
+}

@@ -381,5 +381,86 @@ body {
     flex-direction: column;
   }
 }
+.work {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.work__container {
+  text-align: center;
+  max-width: 1000px;
+}
+.work__title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.work__subtitle {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+.work__text {
+  font-size: 1.9rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer__section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__heading {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.footer__description {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+}
+
+.footer__link {
+  color: #ccc;
+  text-decoration: none;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.footer__link:hover {
+  text-decoration: underline;
+}
+
+/* Modifier for contact section */
+.footer__section--contact {
+  flex-grow: 1;
+}
+
+/* Modifier for follow section */
+.footer__section--follow {
+  flex-grow: 1;
+}
+
+/* Modifier for about section */
+.footer__section--about {
+  flex-grow: 1;
+}
+
+/* Modifier for more section */
+.footer__section--more {
+  flex-grow: 2;
+}
 
 /*# sourceMappingURL=style.css.map */
