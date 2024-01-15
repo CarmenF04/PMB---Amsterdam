@@ -17,20 +17,31 @@
 <body>
     <nav class="nav">
         <div class="nav__content">
-            <div class="nav__logo">
-                <a href="#" class="nav__logo-link">Gemeente Amsterdam.</a>
-            </div>
-            <label for="nav-check" class="nav__checkbox-label">
-                <i class="ri-menu-line nav__icon"></i>
-            </label>
-            <input type="checkbox" id="nav-check" class="nav__checkbox">
-            <ul class="nav__list">
-                <li class="nav__item"><a href="#section1" class="nav__link">PMB</a></li>
-                <li class="nav__item"><a href="./projects/index.html" class="nav__link">Projecten</a></li>
-                <li class="nav__item"><a href="#section3" class="nav__link">Contact</a></li>
-                <li class="nav__item"><a href="#section4" class="nav__link">Werken bij</a></li>
-            </ul>
+          <div class="nav__logo">
+            <a href="#" class="nav__logo-link">Gemeente Amsterdam.</a>
+          </div>
+          <label for="nav-check" class="nav__checkbox-label">
+            <i class="ri-menu-line nav__icon"></i>
+          </label>
+          <input type="checkbox" id="nav-check" class="nav__checkbox">
+          <ul class="nav__list">
+            <!-- Dropdown menu for PMB -->
+            <li class="nav__item nav__item--dropdown">
+              <a href="https://amsterdam.carmenfaas.com/" class="nav__link">PMB</a>
+              <!-- Dropdown content -->
+              <div class="nav__dropdown-content">
+                <a href="#">Mensen</a>
+                <a href="#">Expertise</a>
+                <a href="#">Opdrachten & Projecten</a>
+                <a href="#">Publicaties</a>
+              </div>
+            </li>
+            <li class="nav__item"><a href="./projects/index.html" class="nav__link">Projecten</a></li>
+            <li class="nav__item"><a href="https://www.amsterdam.nl/pmb/contact/" class="nav__link">Contact</a></li>
+            <li class="nav__item"><a href="#section4" class="nav__link">Werken bij</a></li>
+          </ul>
         </div>
+      </nav>
     </nav>
     <section class="carousel__section">
         <div class="carousel__container">

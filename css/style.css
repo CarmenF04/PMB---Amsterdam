@@ -98,6 +98,38 @@ body {
     display: flex;
   }
 }
+.nav__item--dropdown {
+  position: relative;
+}
+
+/* Hide the dropdown content */
+.nav__dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Show the dropdown content on hover */
+.nav__item--dropdown:hover .nav__dropdown-content {
+  display: block;
+}
+
+/* Style the dropdown items */
+.nav__dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change background color of dropdown items on hover */
+.nav__dropdown-content a:hover {
+  background-color: #ddd;
+}
+
 .carousel__section {
   display: flex;
   min-height: 100vh;
@@ -207,6 +239,9 @@ body {
   color: #666;
   line-height: 1.6;
 }
+.organisation__dot {
+  color: red;
+}
 
 .card-container {
   display: flex;
@@ -252,13 +287,13 @@ body {
 }
 .card-container .card .card-content .card-title {
   color: #333;
-  font-size: 1.5em;
+  font-size: 1em;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
 .card-container .card .card-content .card-description {
   color: #666;
-  font-size: 1em;
+  font-size: 0.8em;
   margin-bottom: 1em;
 }
 .card-container .card .card-content .card-button {
