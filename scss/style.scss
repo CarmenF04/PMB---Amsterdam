@@ -11,10 +11,16 @@
 
 @use "./components/organisation/organisation.scss";
 
-@use "./components/projects/projects.scss";
 
 @use "./components/slider/slider.scss";
 
 @use "./components/work/work.scss";
 
 @use "./components/footer/footer.scss";
+
+@use "./components/project-cards/project-cards.scss";
+
+@use "./components/project-info/project-info.scss";
+
+@use "./components/hamburger-menu/hamburger-menu.scss"
+

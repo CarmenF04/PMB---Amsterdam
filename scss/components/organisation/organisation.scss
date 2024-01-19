@@ -1,34 +1,40 @@
 .organisation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; 
-    
-    &__container {
-      text-align: center;
-      max-width: 1000px; 
-    }
-  
-    &__title {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: #333;
-    }
-  
-    &__subtitle {
-      font-size: 2.4rem;
-      margin-bottom: 1rem;
-      color: #555;
-    }
-  
-    &__text {
-      font-size: 1.9rem;
-      color: #666;
-      line-height: 1.6;
-    }
+  display: flex;
+  min-height: 70vh; 
+  text-align: center;
+  padding: 4rem; 
+  margin-top: 5rem; 
 
-    &__dot{
-      color: red;
+  &__container {
+    width: 100%;
+    max-width: 120rem; 
+    margin: 0 auto;
+    display: flex;
+
+    @media (min-width: 76.8rem) { 
+      flex-wrap: nowrap; 
     }
   }
-  
+
+  &__title {
+    font-size: 3rem; 
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  &__subtitle {
+    font-size: 2.4rem; 
+    margin-bottom: 1rem; 
+    color: #555;
+  }
+
+  &__text {
+    font-size: 1.9rem; 
+    color: #666;
+    line-height: 1.6; 
+  }
+
+  &__dot {
+    color: red;
+  }
+}

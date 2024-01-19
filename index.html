@@ -18,22 +18,17 @@
     <nav class="nav">
         <div class="nav__content">
           <div class="nav__logo">
-            <a href="#" class="nav__logo-link">Gemeente Amsterdam.</a>
+            <a href="https://amsterdam.carmenfaas.com/" class="nav__logo-link">Gemeente Amsterdam.</a>
           </div>
-          <label for="nav-check" class="nav__checkbox-label">
-            <i class="ri-menu-line nav__icon"></i>
-          </label>
-          <input type="checkbox" id="nav-check" class="nav__checkbox">
+         
           <ul class="nav__list">
-            <!-- Dropdown menu for PMB -->
             <li class="nav__item nav__item--dropdown">
-              <a href="https://amsterdam.carmenfaas.com/" class="nav__link">PMB</a>
-              <!-- Dropdown content -->
+              <a href="" class="nav__link">PMB</a>
               <div class="nav__dropdown-content">
-                <a href="#">Mensen</a>
-                <a href="#">Expertise</a>
-                <a href="#">Opdrachten & Projecten</a>
-                <a href="#">Publicaties</a>
+                <a href="https://www.amsterdam.nl/pmb/mensen/">Mensen</a>
+                <a href="https://www.amsterdam.nl/pmb/expertise/">Expertise</a>
+                <a href="https://www.amsterdam.nl/pmb/opdrachten-projecten/">Opdrachten & Projecten</a>
+                <a href="https://www.amsterdam.nl/pmb/publicaties/">Publicaties</a>
               </div>
             </li>
             <li class="nav__item"><a href="./projects/index.html" class="nav__link">Projecten</a></li>
@@ -42,7 +37,7 @@
           </ul>
         </div>
       </nav>
-    </nav>
+      
     <section class="carousel__section">
         <div class="carousel__container">
             <div class="carousel__content">
@@ -58,14 +53,14 @@
                     verbetert, door niet alleen woningen te bouwen maar ook te zorgen voor maatschappelijke
                     voorzieningen, voor huidige bewoners en toekomstige generaties.
                 </p>
-                <div class="content-slider">
+                <div class= "content-slider">
                     <div id="slider">
-                        <img src="/img/img1.jpg" class="slide" alt="Slide 1">
-                        <img src="/img/img2.jpg" class="slide" alt="Slide 2">
-                        <img src="/img/img3.jpg" class="slide" alt="Slide 3">
-                        <img src="/img/img4.jpg" class="slide" alt="Slide 4">
-                        <img src="/img/img5.jpg" class="slide" alt="Slide 5">
-                        <img src="/img/img6.jpg" class="slide" alt="Slide 6">
+                        <img src="/img/img1.jpg" class="slide" alt="Nieuwbouw">
+                        <img src="/img/img2.jpg" class="slide" alt="Renovatie de wereld burger">
+                        <img src="/img/img3.jpg" class="slide" alt="nieuwbouw spinozafirst">
+                        <img src="/img/img4.jpg" class="slide" alt="bostheather">
+                        <img src="/img/img5.jpg" class="slide" alt="sporthallen zuid">
+                        <img src="/img/img6.jpg" class="slide" alt="amsterdam museum">
                         <img src="/img/img7.jpg" class="slide" alt="Slide 7">
                         <img src="/img/img8.jpg" class="slide" alt="Slide 8">
                     </div>
@@ -77,23 +72,7 @@
         </div>
     </section>
 
-    <section class="features">
-        <div class="feature-card">
-            <div class="feature-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-            <h3 class="feature-title">Organisatie</h3>
-            <button class="feature-button">meer info</button>
-        </div>
-        <div class="feature-card highlight">
-            <div class="feature-icon"><i class="fa-solid fa-people-group"></i></div>
-            <h3 class="feature-title">Projecten</h3>
-            <button class="feature-button">meer info</button>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon"><i class="fa-solid fa-calculator"></i></div>
-            <h3 class="feature-title">Werken bij</h3>
-            <button class="feature-button">meer info</button>
-        </div>
-    </section>
+ 
 
     <section class="organisation">
         <div class="organisation__container">
@@ -121,7 +100,7 @@
         </div>
     </section>
 
-    <section class="work">
+    <section class="work" id="section4">
         <div class="work__container">
             <div class="work__content">
                 <h1 class="work__title">Werken bij<span class="work__dot">.</span></h1>
@@ -145,33 +124,33 @@
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="footer__section footer__section--contact">
-            <h2 class="footer__heading">Mail</h2>
-            <p class="footer__description">
-                PMB is bereikbaar op werkdagen tussen 8.30 - 17.30 uur.
-            </p>
-            <a href="mailto:contact@example.com" class="footer__link">Contact</a>
+    <footer class="site-footer">
+        <div class="footer-container">
+          <div class="footer-item">
+            <h2>Mail<span class="footer__dot">.</span></h2>
+            <p>PMB is bereikbaar op werkdagen tussen 8.30 - 17.30 uur.</p>
+            <a class="footer-link" href="https://www.amsterdam.nl/pmb/contact/">Contact</a>
+          </div>
+          <div class="footer-item">
+            <h2>Volg ons<span class="footer__dot">.</span></h2>
+            <div class="social-links">
+              <a class="footer-link" href="https://twitter.com">Twitter</a>
+              <a class="footer-link" href="https://linkedin.com">LinkedIn</a>
+            </div>
+          </div>
+          <div class="footer-item">
+            <h2>Over deze site<span class="footer__dot">.</span></h2>
+            <a class="footer-link" href="#">Colophon</a>
+            <a class="footer-link" href="#">Disclaimer</a>
+            <a class="footer-link" href="#">Sitemap</a>
+          </div>
+          <div class="footer-item">
+            <h2>Amsterdam.nl</h2>
+            <p>Nieuws en publieksinformatie van de gemeente Amsterdam vindt u op <a class="footer-link" href="https://www.amsterdam.nl">amsterdam.nl</a></p>
+          </div>
         </div>
-        <div class="footer__section footer__section--follow">
-            <h2 class="footer__heading">Volg het ProjectManagement Bureau</h2>
-            <a href="https://twitter.com" class="footer__link">Twitter</a>
-            <a href="https://linkedin.com" class="footer__link">LinkedIn</a>
-        </div>
-        <div class="footer__section footer__section--about">
-            <h2 class="footer__heading">Over deze site</h2>
-            <a href="/colofon" class="footer__link">Colofon</a>
-            <a href="/proclaimer-copyright" class="footer__link">Proclaimer en Copyright</a>
-            <a href="/sitemap" class="footer__link">Sitemap</a>
-        </div>
-        <div class="footer__section footer__section--more">
-            <h2 class="footer__heading">Amsterdam.nl</h2>
-            <p class="footer__description">
-                Nieuws en publieksinformatie van de gemeente Amsterdam vindt u op amsterdam.nl
-            </p>
-            <a href="https://amsterdam.nl" class="footer__link">Naar amsterdam.nl</a>
-        </div>
-    </footer>
+      </footer>
+      
     
 
 </body>

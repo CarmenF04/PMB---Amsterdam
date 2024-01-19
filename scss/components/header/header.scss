@@ -1,6 +1,6 @@
-$primary-color: #DA1219; // Replace with your primary color
-$text-dark: #333; // Replace with your text color
-$max-width: 1200px; // Max width of the nav content
+$primary-color: #DA1219;
+$text-dark: #333;
+$max-width: 120rem;
 
 .nav {
   width: 100%;
@@ -27,25 +27,18 @@ $max-width: 1200px; // Max width of the nav content
     font-weight: 600;
   }
 
-  &__checkbox-label {
-    display: none;
-    .nav__icon {
-      font-size: 2rem;
-      color: $primary-color;
-      cursor: pointer;
-    }
-  }
-
-  &__checkbox {
-    display: none;
-  }
-
   &__list {
     display: flex;
     align-items: center;
     gap: 1rem;
     list-style: none;
-    transition: left 0.3s;
+    transition: transform 0.3s ease-in-out;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column; // Stack items vertically on smaller screens
+      align-items: flex-start; // Align items to the start
+      width: 100%; // Ensure full width
+    }
   }
 
   &__item {
@@ -65,61 +58,47 @@ $max-width: 1200px; // Max width of the nav content
   }
 }
 
-
 @media screen and (max-width: 768px) {
-  .nav__checkbox-label {
-    display: block; 
+  .nav__content {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .nav__list {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    flex-direction: column;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    display: none; 
-
-    .nav__item {
-      width: 100%; 
-      text-align: center; 
-    }
+    display: block; // Ensure nav items are visible on small screens
+    width: 100%; // Full width
   }
 
-  .nav__checkbox:checked ~ .nav__list {
-    display: flex; 
+  .nav__item {
+    display: block; // Stack items vertically
+    width: 100%; // Full width
+  }
+
+  .nav__item--dropdown .nav__dropdown-content {
+    position: static; // Dropdown content should not overlap other items
   }
 }
 
 .nav__item--dropdown {
   position: relative;
+
+  &:hover .nav__dropdown-content {
+    display: block;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
 }
 
-/* Hide the dropdown content */
-.nav__dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Show the dropdown content on hover */
-.nav__item--dropdown:hover .nav__dropdown-content {
-  display: block;
-}
-
-/* Style the dropdown items */
 .nav__dropdown-content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-}
 
-/* Change background color of dropdown items on hover */
-.nav__dropdown-content a:hover {
-  background-color: #ddd;
+  &:hover {
+    background-color: #ddd;
+  }
 }
